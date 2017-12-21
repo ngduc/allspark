@@ -1,0 +1,7 @@
+{
+  "modules": [
+    "preact-pwa",
+    "go-apis",
+    "netlify"
+  ]
+}

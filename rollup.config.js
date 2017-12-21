@@ -1,12 +1,17 @@
-import babel from 'rollup-plugin-babel';
-import nodeResolve from 'rollup-plugin-node-resolve';
-import uglify from 'rollup-plugin-uglify';
-import bundleSize from 'rollup-plugin-bundle-size';
-import commonjs from 'rollup-plugin-commonjs';
+import babel from "rollup-plugin-babel";
+import nodeResolve from "rollup-plugin-node-resolve";
+import uglify from "rollup-plugin-uglify";
+import bundleSize from "rollup-plugin-bundle-size";
+import commonjs from "rollup-plugin-commonjs";
+import replace from "rollup-plugin-replace";
 
 const name = `allspark`;
 
 const plugins = [
+  replace({
+    "#!/usr/bin/env node": ``,
+    delimiters: [``, ``] // required for 'replace' to work.
+  }),
   babel(),
   nodeResolve({
     module: true,
